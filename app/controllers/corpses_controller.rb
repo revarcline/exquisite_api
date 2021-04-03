@@ -1,0 +1,2 @@
+class CorpsesController < ApplicationController
+end
