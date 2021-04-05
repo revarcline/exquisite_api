@@ -14,5 +14,11 @@ class CorpsesController < ApplicationController
     render 'show.json'
   end
 
+  def add
+    @corpse = Corpse.find(params[:id])
+    @last_entry = @corpse.entries.last
+    render 'add.json'
+  end
+
   def new; end
 end
