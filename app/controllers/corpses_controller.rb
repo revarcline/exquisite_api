@@ -28,10 +28,7 @@ class CorpsesController < ApplicationController
 
   private
 
-  # set up strong params
-  # specify i want some key
-
   def corpse_params
-    params.require(:corpse).permit(:title, entry_attributes: %i[content])
+    params.require(:corpse).permit(:title, :id, entries_attributes: %i[id content])
   end
 end
