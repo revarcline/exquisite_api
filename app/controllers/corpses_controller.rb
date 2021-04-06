@@ -11,7 +11,9 @@ class CorpsesController < ApplicationController
 
   def random
     @corpse = Corpse.random
-    render 'show.json'
+    @last_entry = @corpse.entries.last
+    @last_entry = @corpse.entries.last
+    render 'add.json'
   end
 
   def add
@@ -20,5 +22,16 @@ class CorpsesController < ApplicationController
     render 'add.json'
   end
 
-  def new; end
+  def create
+    @corpse = Corpse.create(corpse_params)
+  end
+
+  private
+
+  # set up strong params
+  # specify i want some key
+
+  def corpse_params
+    params.require(:corpse).permit(:title, entry_attributes: %i[content])
+  end
 end
