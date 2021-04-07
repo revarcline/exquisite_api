@@ -1,5 +1,6 @@
 class Entry < ApplicationRecord
   belongs_to :corpse
+  validates_with WordCountValidator
 
   # assign preview when creating entry
   def content=(content)

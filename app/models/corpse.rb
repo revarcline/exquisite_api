@@ -1,6 +1,7 @@
 class Corpse < ApplicationRecord
-  has_many :entries
+  has_many :entries, dependent: :destroy
   accepts_nested_attributes_for :entries
+  validates :title, presence: true
 
   def self.random
     Corpse.order(Arel.sql('RANDOM()')).first
