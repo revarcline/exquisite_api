@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   def create
     @entry = Entry.create(entry_params)
     @corpse = @entry.corpse
-    render 'corpses/show.json'
+    render 'corpses/id.json'
   end
 
   private

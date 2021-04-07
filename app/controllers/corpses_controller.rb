@@ -24,6 +24,7 @@ class CorpsesController < ApplicationController
 
   def create
     @corpse = Corpse.create(corpse_params)
+    render 'id.json'
   end
 
   private
