@@ -1,24 +1,11 @@
-# README
+this is the rails backend for the [exquisite](https://exquisite.buckar.ooo/) single-page-application.
+it serves up json objects from a postgresql database. frontend code available [here](https://github.com/revarcline/exquisite_page)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+routes:
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`GET /corpses`: index of all corpse entries, showing title and id
+`GET /corpses/:id`: shows title and full content (concatenated entries) of corpse by id
+`GET /corpses/:id/add`: shows preview of last entry in corpse
+`GET /corpses/random`: same as `:id/add` but returns a random corpse
+`POST /corpses`: create a new corpse
+`POST /corpses/:id/entries`: create a new entry for corpse id
